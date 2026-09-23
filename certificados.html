@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Certificados — Ronaldo Lopes</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <style>
+        /* Estilos só desta página (não mexem no style.css do portfólio) */
+        .cert-page-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem 9%;
+            background: var(--bg-color);
+        }
+
+        .cert-page-header .logo {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .cert-page-header a.back {
+            font-size: 1.5rem;
+            color: var(--main-color);
+            font-weight: 500;
+        }
+
+        .cert-page-header a.back:hover {
+            text-decoration: underline;
+        }
+
+        .certificates.standalone {
+            min-height: auto;
+            padding: 3rem 9% 8rem;
+        }
+
+        .certificates.standalone .heading {
+            margin-bottom: 1rem;
+        }
+
+        .certificates.standalone .subheading {
+            text-align: center;
+            font-size: 1.6rem;
+            color: var(--text-color);
+            opacity: .8;
+            max-width: 60rem;
+            margin: 0 auto 4rem;
+        }
+
+        .certificate-card .cert-download {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            margin-top: .5rem;
+            padding: .9rem 1.6rem;
+            background: var(--main-color);
+            color: var(--bg-color);
+            font-size: 1.4rem;
+            font-weight: 600;
+            border-radius: .6rem;
+            transition: .3s;
+        }
+
+        .certificate-card .cert-download:hover {
+            background: transparent;
+            border: .15rem solid var(--main-color);
+            color: var(--main-color);
+        }
+
+        .cert-page-footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--second-bg-color);
+            color: var(--text-color);
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="cert-page-header">
+        <span class="logo">Ronaldo.</span>
+        <a class="back" href="index.html"><i class='bx bx-arrow-back'></i> Voltar ao portfólio</a>
+    </header>
+
+    <section class="certificates standalone show-animate" id="certificates">
+        <h2 class="heading">Meus <span>Certificados</span></h2>
+        <p class="subheading">Cursos e formações concluídos, com o PDF original de cada certificado disponível para download (números de documento pessoal foram ocultados por privacidade).</p>
+
+        <div class="certificates-row">
+
+            <div class="certificate-card">
+                <i class='bx bxs-award'></i>
+                <h3>Power BI</h3>
+                <p class="institution">SENAI "Mario Dedini" — Piracicaba/SP</p>
+                <p class="meta"><i class='bx bxs-calendar'></i> 20/08/2022 a 24/09/2022 &nbsp;·&nbsp; 20h</p>
+                <a href="certificados/power-bi.pdf" download class="cert-download">Baixar PDF <i class='bx bx-download'></i></a>
+            </div>
+
+            <div class="certificate-card">
+                <i class='bx bxs-award'></i>
+                <h3>Programação em Python</h3>
+                <p class="institution">SENAI "Mario Henrique Simonsen" — Piracicaba/SP</p>
+                <p class="meta"><i class='bx bxs-calendar'></i> 08/07/2023 a 09/09/2023 &nbsp;·&nbsp; 80h</p>
+                <a href="certificados/python.pdf" download class="cert-download">Baixar PDF <i class='bx bx-download'></i></a>
+            </div>
+
+            <div class="certificate-card">
+                <i class='bx bxs-award'></i>
+                <h3>Programação Oracle – Java Foundations</h3>
+                <p class="institution">SENAI "Mario Henrique Simonsen" — Piracicaba/SP</p>
+                <p class="meta"><i class='bx bxs-calendar'></i> 12/09/2023 a 13/11/2023 &nbsp;·&nbsp; 80h</p>
+                <a href="certificados/java.pdf" download class="cert-download">Baixar PDF <i class='bx bx-download'></i></a>
+            </div>
+
+            <div class="certificate-card">
+                <i class='bx bxs-award'></i>
+                <h3>Desenvolvedor de Aplicações para Android</h3>
+                <p class="institution">SENAI "Mario Henrique Simonsen" — Piracicaba/SP</p>
+                <p class="meta"><i class='bx bxs-calendar'></i> 27/11/2023 a 26/12/2023 &nbsp;·&nbsp; 40h</p>
+                <a href="certificados/android.pdf" download class="cert-download">Baixar PDF <i class='bx bx-download'></i></a>
+            </div>
+
+            <div class="certificate-card">
+                <i class='bx bxs-graduation'></i>
+                <h3>Tecnólogo em Logística</h3>
+                <p class="institution">Faculdade Anhanguera de Piracicaba</p>
+                <p class="meta"><i class='bx bxs-calendar'></i> Conclusão 19/12/2014 &nbsp;·&nbsp; Colação 26/03/2015</p>
+                <a href="certificados/diploma.pdf" download class="cert-download">Baixar PDF <i class='bx bx-download'></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="cert-page-footer">
+        <p>Ronaldo Lopes de Barros &middot; ronaldolb@gmail.com &middot; (19) 98825-0395</p>
+    </footer>
+
+</body>
+
+</html>

@@ -12,26 +12,34 @@ document.addEventListener('DOMContentLoaded', () => {
         navbar.classList.toggle('active');
     });
 
-    // Animações e eventos ao rolar a página
-    window.addEventListener('scroll', () => {
-        const top = window.scrollY;
+    // Revela cada seção assim que ela entra na tela e mantém revelada.
+    // (o cálculo manual de scrollY x offsetTop usado antes fazia o
+    // conteúdo sumir sempre que você parava de rolar fora da faixa
+    // calculada; o IntersectionObserver não depende disso)
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show-animate');
 
-        sections.forEach(sec => {
-            const offset = sec.offsetTop - 100;
-            const height = sec.offsetHeight;
-            const id = sec.getAttribute('id');
+                const id = entry.target.getAttribute('id');
+                const activeLink = document.querySelector(`header nav a[href*="${id}"]`);
 
-            if (top >= offset && top < offset + height) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    const activeLink = document.querySelector(`header nav a[href*="${id}"]`);
-                    if (activeLink) activeLink.classList.add('active');
-                });
-                sec.classList.add('show-animate');
-            } else {
-                sec.classList.remove('show-animate');
+                if (activeLink) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    activeLink.classList.add('active');
+                }
             }
         });
+    }, {
+        threshold: 0,
+        rootMargin: '-100px 0px 0px 0px'
+    });
+
+    sections.forEach(sec => revealObserver.observe(sec));
+
+    // Eventos ao rolar a página
+    window.addEventListener('scroll', () => {
+        const top = window.scrollY;
 
         // Header Sticky
         header.classList.toggle('sticky', top > 100);
